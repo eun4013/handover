@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>뚜레쥬르 마감 체크리스트</title>
+    <style>
+      body {
+        font-family: "Pretendard", sans-serif;
+        background-color: #fffdf8;
+        padding: 40px;
+        color: #333;
+      }
+      h1 {
+        color: #2c3e50;
+        font-size: 30px;
+      }
+      ul {
+        background: #f9f9f9;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+      li {
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+      }
+      label {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #34495e;
+      }
+      input[type="checkbox"] {
+        transform: scale(1.2);
+        margin-top: 4px;
+        margin-bottom: 20px;
+      }
+      .details {
+        margin-left: 28px;
+        margin-top: 6px;
+        margin-bottom: 20px;
+      }
+      .details p {
+        display: block;
+        color: #666;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .notice-box {
+        margin-top: 30px;
+        padding: 20px;
+        border-left: 6px solid #fa0f62;
+        background-color: #fff4f8;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+      .notice-box h2 {
+        margin-top: 0;
+        font-size: 20px;
+        color: #c0392b;
+        margin-bottom: 10px;
+      }
+      .notice-box p {
+        margin: 6px 0;
+        font-size: 15px;
+        color: #555;
+      }
+
+      @media (max-width: 480px) {
+        body {
+          padding: 20px;
+        }
+
+        h1 {
+          font-size: 22px;
+        }
+
+        label {
+          font-size: 16px;
+          flex-wrap: wrap;
+        }
+
+        .details {
+          margin-left: 0;
+          margin-top: 8px;
+        }
+
+        .details p {
+          font-size: 14px;
+        }
+
+        .notice-box h2 {
+          font-size: 18px;
+        }
+
+        .notice-box p {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>뚜레쥬르 마감 체크리스트</h1>
+    <ul>
+      <li>
+        <label><input type="checkbox" />1. 쓰레기 버리기</label>
+        <div class="details">
+          <p>매장 안 쓰레기통 비우고 분리수거 하러가기</p>
+          <p>쓰레기봉투는 1번 포스기 옆 서랍장 하단에</p>
+          <p
+            >쓰레기장은 밖으로 나가서 빽스비어 옆 입구로 들어가 지하2층 주차장
+            우측</p>
+        </div>
+      </li>
+      <li>
+        <label><input type="checkbox" />2. 비닐 새로 씌우기</label>
+        <div class="details">
+          <p>비닐은 트레이 올려져있는 서랍장에 있음</p>
+          <p>더러워진 것만 갈아놓기</p>
+        </div>
+      </li>
+      <li>
+        <label><input type="checkbox" />3. 빵 정리하기</label>
+        <div class="details">
+          <p>빵은 가운데로 모아서 진열대 깔끔하게 보이도록</p>
+        </div>
+      </li>
+      <li>
+        <label><input type="checkbox" />4. 청소 (빗자루 / 대걸레)</label>
+        <div class="details">
+          <p>먼저 빗자루로 쓸고, 더러우면 대걸레질</p>
+        </div>
+      </li>
+      <li>
+        <label><input type="checkbox" />5. 걸레 빨기</label>
+        <div class="details">
+          <p>9~10시 사이에 커피머신 옆 보관함 걸레 모두 세탁</p>
+          <p>세제 사용, 냄새 나면 락스/표백제 사용 (개수대 하단 서랍장)</p>
+        </div>
+      </li>
+      <li>
+        <label><input type="checkbox" />6. 커피머신 청소</label>
+        <div class="details">
+          <p
+            >10시 30분 부터 하시면 됩니다 메뉴 &gt; 린싱 &gt; 확인버튼</p>
+          <p>청소용 알약 1개만, 분리 시 검은 손잡이 사용</p>
+        </div>
+      </li>
+      <li>
+        <label><input type="checkbox" />7. 빵 트레이에 모으기</label>
+        <div class="details">
+          <p>10시 40분부터 내일 판매할 전날 빵 모아서 트레이에</p>
+          <p>크림빵은 케이크장에 따로 보관</p>
+          <p>사진 찍어서 매니저님께 전송</p>
+        </div>
+      </li>
+      <li>
+        <label><input type="checkbox" />8. 냉각수 버리기</label>
+        <div class="details">
+          <p>음료장 / 샌드위치장 냉각수통 확인하고 남은 물 비우기</p>
+        </div>
+      </li>
+      <li>
+        <label><input type="checkbox" />9. 조명 끄기 + 덮개 씌우기</label>
+        <div class="details">
+          <p>음료장 / 샌드위치장 / 케이크장 조명 끄고 덮개 덮기</p>
+          <p>덮개는 냉각수 서랍장 안쪽 or 트레이 서랍장</p>
+        </div>
+      </li>
+      <li>
+        <label><input type="checkbox" />10. 마무리</label>
+        <div class="details">
+          <p>에어컨(삼성만), 선풍기, 노래, 문단속 확인</p>
+        </div>
+      </li>
+    </ul>
+    <div class="notice-box">
+      <h2>발주표 요청시</h2>
+      <p>점장님이 매장 전화료 발주표 사진 요청해주실때가 있습니다</p>
+      <p>📍 발주표 위치: 주방 조리대 위</p>
+      <p>📍 예약장부 위치: 1번포스기 하단 1번째 슬라이드서랍</p>
+      <p>📸 발주표 15페이지및 예약장부 당일부터 전체다 사진 촬영</p>
+      <p>매장내부 빵진열대및 음료진열대 사진촬영</p>
+      <p>
+        재고있는지 확인해야하기때문에 식빵진열대 하단/ 파운드케이크진열대
+        하단서랍 열어서 꼭 같이 찍어서 보내주세요
+      </p>
+    </div>
+  </body>
+</html>
