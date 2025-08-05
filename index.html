@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>뚜레쥬르 마감 체크리스트</title>
     <style>
       body {
@@ -9,6 +10,7 @@
         background-color: #fffdf8;
         padding: 40px;
         color: #333;
+        text-align: center;
       }
       h1 {
         color: #2c3e50;
@@ -37,6 +39,8 @@
         transform: scale(1.2);
         margin-top: 4px;
         margin-bottom: 20px;
+
+        transform: scale(1.4); /* ✅ 터치 쉽게 크게 */
       }
       .details {
         margin-left: 28px;
@@ -70,27 +74,83 @@
         color: #555;
       }
 
-      @media (max-width: 480px) {
+      .modal {
+  display: none; /* 처음엔 숨김 */
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* 모달 박스 */
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 이미지 안 꽉 차게 */
+.modal-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* 닫기 버튼 */
+.close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+}
+
+          @media (max-width: 480px) {
         body {
-          padding: 20px;
+          padding: 16px;
         }
 
         h1 {
           font-size: 22px;
         }
 
+        ul {
+          padding: 16px;
+        }
+
         label {
           font-size: 16px;
+          flex-direction: row;
+          align-items: center;
           flex-wrap: wrap;
+        }
+
+        input[type="checkbox"] {
+          transform: scale(1.4);
+          margin-top: 0;
         }
 
         .details {
           margin-left: 0;
-          margin-top: 8px;
+          margin-top: 10px;
         }
 
         .details p {
           font-size: 14px;
+          line-height: 1.5;
+        }
+
+        .notice-box {
+          padding: 16px;
         }
 
         .notice-box h2 {
@@ -100,6 +160,15 @@
         .notice-box p {
           font-size: 14px;
         }
+
+          .modal-content {
+    margin: 20% auto;
+    width: 90%;
+  }
+
+  .close {
+    font-size: 28px;
+  }
       }
     </style>
   </head>
@@ -109,18 +178,32 @@
       <li>
         <label><input type="checkbox" />1. 쓰레기 버리기</label>
         <div class="details">
-          <p>매장 안 쓰레기통 비우고 분리수거 하러가기</p>
+          
           <p>쓰레기봉투는 1번 포스기 옆 서랍장 하단에</p>
-          <p
-            >쓰레기장은 밖으로 나가서 빽스비어 옆 입구로 들어가 지하2층 주차장
-            우측</p>
+          <p>매장 안 쓰레기통 비우고 분리수거 하러가기</p>
+          <p>
+            분리수거장은 밖으로 나가서 빽스비어 옆 입구(gate 5)로 들어가 지하2층 주차장
+            우측
+          </p>
+          <p>
+      분리수거장 위치
+      <button class="open-modal">지도 보기</button>
+    </p>
+
+    <div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <img src="go.jpg" alt="쓰레기 버리는 곳 안내도" />
+  </div>
+</div>
         </div>
       </li>
       <li>
         <label><input type="checkbox" />2. 비닐 새로 씌우기</label>
         <div class="details">
           <p>비닐은 트레이 올려져있는 서랍장에 있음</p>
-          <p>더러워진 것만 갈아놓기</p>
+          <p>더러워진 것 갈아놓기</p>
+          <p>물티슈로 한번 닦아놓기</p>
         </div>
       </li>
       <li>
@@ -133,20 +216,22 @@
         <label><input type="checkbox" />4. 청소 (빗자루 / 대걸레)</label>
         <div class="details">
           <p>먼저 빗자루로 쓸고, 더러우면 대걸레질</p>
+          <p>대걸래는 주방 제일 안쪽에 있습니다</p>
         </div>
       </li>
       <li>
         <label><input type="checkbox" />5. 걸레 빨기</label>
         <div class="details">
           <p>9~10시 사이에 커피머신 옆 보관함 걸레 모두 세탁</p>
-          <p>세제 사용, 냄새 나면 락스/표백제 사용 (개수대 하단 서랍장)</p>
+          <p>개수대 하단 행주용이라고 적힌 스텐볼 사용</p>
+          <p>세제로 간단하게 행군 후 락스/표백제 사용 (개수대 하단 서랍장)</p>
         </div>
       </li>
       <li>
         <label><input type="checkbox" />6. 커피머신 청소</label>
         <div class="details">
           <p
-            >10시 30분 부터 하시면 됩니다 메뉴 &gt; 린싱 &gt; 확인버튼</p>
+            >10시 30분에 커피머신 마감입니다 메뉴 &gt; 린싱 &gt; 확인버튼</p>
           <p>청소용 알약 1개만, 분리 시 검은 손잡이 사용</p>
         </div>
       </li>
@@ -155,6 +240,7 @@
         <div class="details">
           <p>10시 40분부터 내일 판매할 전날 빵 모아서 트레이에</p>
           <p>크림빵은 케이크장에 따로 보관</p>
+          <p>단팥빵/소보루빵/크로와상/바게트(썰어서) 주방에</p>
           <p>사진 찍어서 매니저님께 전송</p>
         </div>
       </li>
@@ -190,5 +276,30 @@
         하단서랍 열어서 꼭 같이 찍어서 보내주세요
       </p>
     </div>
+
+
+    <script>
+  // 모달 요소 찾기
+  const modal = document.getElementById("modal");
+  const openBtn = document.querySelector(".open-modal");
+  const closeBtn = document.querySelector(".close");
+
+  // 열기
+  openBtn.addEventListener("click", () => {
+    modal.style.display = "block";
+  });
+
+  // 닫기
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  // 바깥 클릭 시 닫기
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+</script>
   </body>
 </html>
